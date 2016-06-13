@@ -1,6 +1,6 @@
 var path = require('path');
 
-var directory = path.resolve(__dirname, "moj_rec_sample/apps/sample_problems/static/sample_problems");
+var directory = path.resolve(__dirname, 'src');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {

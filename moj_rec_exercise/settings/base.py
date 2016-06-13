@@ -64,7 +64,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sample_problems'
+    'exercise_provider'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -78,7 +78,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'moj_rec_sample.urls'
+ROOT_URLCONF = 'moj_rec_exercise.urls'
 
 TEMPLATES = [
     {
@@ -97,7 +97,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'moj_rec_sample.wsgi.application'
+WSGI_APPLICATION = 'moj_rec_exercise.wsgi.application'
 
 
 # Database
