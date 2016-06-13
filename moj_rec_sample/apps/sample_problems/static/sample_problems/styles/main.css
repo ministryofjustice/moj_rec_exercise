@@ -1,0 +1,9 @@
+strong {
+    font-weight: bold;
+}
+
+@media (min-width: 641px) {
+  select#projects {
+    width: 450px;
+  }
+}

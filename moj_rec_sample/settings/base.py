@@ -17,17 +17,25 @@ import dj_database_url
 
 # PATH vars
 
-here = lambda *x: join(abspath(dirname(__file__)), *x)
-PROJECT_ROOT = here("..")
-root = lambda *x: join(abspath(PROJECT_ROOT), *x)
-
-sys.path.insert(0, root())
-sys.path.insert(0, root('apps'))
+# here = lambda *x: join(abspath(dirname(__file__)), *x)
+# PROJECT_ROOT = here("..")
+# root = lambda *x: join(abspath(PROJECT_ROOT), *x)
+#
+# sys.path.insert(0, root())
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+location = lambda x: os.path.abspath(os.path.join(
+    os.path.dirname(os.path.realpath(__file__)), '..', x))
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+sys.path.insert(0, location('apps'))
+
+# sys.path.insert(0, root('apps'))
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+STATIC_ROOT = location('static')
 STATIC_URL = '/static/'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -56,6 +64,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sample_problems'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -74,7 +83,7 @@ ROOT_URLCONF = 'moj_rec_sample.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [location('templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,6 +91,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'dashboard.apps.prototype.context_processors.moj',
             ],
         },
     },
