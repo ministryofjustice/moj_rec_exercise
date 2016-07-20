@@ -1,13 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-
-
-def index(request):
-
-    context = {'data': 'test'}
-    response = render(request, 'index.html', context)
-    return response
-
+# from moj_rec_exercise.apps.exercise_provider.models import Test
 
 def get_exercise(request):
 

@@ -1,15 +1,16 @@
 var path = require('path');
 
-var directory = path.resolve(__dirname, 'src');
+var srcDirectory = path.resolve(__dirname, 'src');
+var distDirectory = path.resolve(__dirname, 'dist');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: [
     'babel-polyfill',
-    path.resolve(directory, 'js/main.js'),
+    path.resolve(srcDirectory, 'js/app.js'),
   ],
   output: {
-    path: path.resolve(directory, 'dist'),
+    path: distDirectory,
     filename: "bundle.js"
   },
 
@@ -20,7 +21,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015']
+          presets: ['es2015', 'react']
         }
       },
       {

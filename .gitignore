@@ -1,8 +1,10 @@
 .DS_Store
 .idea
+.idea_pycharm
 *.iml
 node_modules/
 build/
 *.log*
 npm-debug.log
 *.pyc
+

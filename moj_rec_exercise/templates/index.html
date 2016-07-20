@@ -1,11 +1,17 @@
 <!DOCTYPE html>
+
+{% load staticfiles %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script></script>
-    <title></title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+
+    <link href="{% static 'styles.css' %}" rel="stylesheet" type="text/css"/>
+    <title>{{ app_title }}</title>
 </head>
 <body>
-{{ data }}
+<div id="app"></div>
+<script src="{% static 'bundle.js' %}"></script>
 </body>
 </html>

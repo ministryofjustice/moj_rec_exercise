@@ -15,14 +15,6 @@ import sys
 from os.path import join, abspath, dirname
 import dj_database_url
 
-# PATH vars
-
-# here = lambda *x: join(abspath(dirname(__file__)), *x)
-# PROJECT_ROOT = here("..")
-# root = lambda *x: join(abspath(PROJECT_ROOT), *x)
-#
-# sys.path.insert(0, root())
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 location = lambda x: os.path.abspath(os.path.join(
@@ -30,27 +22,19 @@ location = lambda x: os.path.abspath(os.path.join(
 
 sys.path.insert(0, location('apps'))
 
-# sys.path.insert(0, root('apps'))
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-STATIC_ROOT = location('static')
+STATIC_ROOT = location('staticfiles')
 STATIC_URL = '/static/'
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, '../dist'),
+]
 
+print(STATIC_ROOT)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'p&n$z$0^p9v3o0r!(@0f=-(i_p3ox-7ntpu7^qtg83)ev+bjj1'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -64,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'exercise_provider'
+    'exercise_provider',
+    'ui_provider'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -83,7 +68,7 @@ ROOT_URLCONF = 'moj_rec_exercise.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [location('templates'), ],
+        'DIRS': [location('templates'), ],  # location('../dist')
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
