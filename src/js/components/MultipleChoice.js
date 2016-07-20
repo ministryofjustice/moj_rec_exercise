@@ -1,22 +1,40 @@
 import React from 'react';
-import RadioButtonGroup from 'material-ui/RadioButton/RadioButtonGroup'
-import RadioButton from 'material-ui/RadioButton/RadioButton'
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
-class MultipleChoice extends React.Component {
-// function MultipleChoice() {
+const styles = {
+  block: {
+    maxWidth: 250,
+  },
+  radioButton: {
+    marginBottom: 16,
+  },
+};
 
-  render() {
+const MultipleChoiceQuestion = () => (
+  <div>
+    <RadioButtonGroup name="multipleChoice" defaultSelected="not_light">
+      <RadioButton
+        value="a1"
+        label="Answer 1"
+        style={styles.radioButton}
+      />
+      <RadioButton
+        value="a2"
+        label="Answer 2"
+        style={styles.radioButton}
+      />
+      <RadioButton
+        value="a3"
+        label="Answer 3"
+        style={styles.radioButton}
+      />
+      <RadioButton
+        value="a4"
+        label="Answer 4"
+        style={styles.radioButton}
+      />
+    </RadioButtonGroup>
+  </div>
+);
 
-    return (
-
-      <RadioButtonGroup name="blizzard-games">
-        <RadioButton label="Warcraft 2" value="wc2"/>
-        <RadioButton label="Warcraft 3" value="wc3"/>
-        <RadioButton label="Starcraft 1" value="sc1"/>
-        <RadioButton label="Starcraft 2" value="sc2"/>
-      </RadioButtonGroup>
-    )
-  }
-}
-
-export default MultipleChoice
+export default MultipleChoiceQuestion;
