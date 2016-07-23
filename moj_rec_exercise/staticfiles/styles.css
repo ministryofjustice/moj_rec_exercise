@@ -1,0 +1,17 @@
+html {
+
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+    background-color: #dee0e2;
+}
+
+#app {
+    width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*# sourceMappingURL=styles.css.map*/

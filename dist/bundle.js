@@ -8141,8 +8141,13 @@
 	
 	var _QuestionCard2 = _interopRequireDefault(_QuestionCard);
 	
+	var _Page = __webpack_require__(631);
+	
+	var _Page2 = _interopRequireDefault(_Page);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// import MultipleChoiceQuestion from './components/MultipleChoice'
 	/**
 	 * Created by jamesnarey on 13/06/2016.
 	 */
@@ -8152,16 +8157,9 @@
 	  return _react2.default.createElement(
 	    _MuiThemeProvider2.default,
 	    { muiTheme: (0, _getMuiTheme2.default)() },
-	    _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(_AppBar2.default, null),
-	      _react2.default.createElement(_QuestionCard2.default, null)
-	    )
+	    _react2.default.createElement(_Page2.default, null)
 	  );
 	};
-	// import MultipleChoiceQuestion from './components/MultipleChoice'
-	
 	
 	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
 
@@ -43107,13 +43105,9 @@
 	      subtitle: 'Subtitle',
 	      avatar: 'http://lorempixel.com/100/100/nature/'
 	    }),
-	    _react2.default.createElement(
-	      _Card.CardMedia,
-	      {
-	        overlay: _react2.default.createElement(_Card.CardTitle, { title: 'Overlay title', subtitle: 'Overlay subtitle' })
-	      },
-	      _react2.default.createElement('img', { src: 'http://lorempixel.com/600/337/nature/' })
-	    ),
+	    _react2.default.createElement(_Card.CardMedia, {
+	      overlay: _react2.default.createElement(_Card.CardTitle, { title: 'Overlay title', subtitle: 'Overlay subtitle' })
+	    }),
 	    _react2.default.createElement(_Card.CardTitle, { title: 'Card title', subtitle: 'Card subtitle' }),
 	    _react2.default.createElement(
 	      _Card.CardText,
@@ -44879,6 +44873,47 @@
 	  muiTheme: _react.PropTypes.object.isRequired
 	};
 	exports.default = FlatButtonLabel;
+
+/***/ },
+/* 631 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(302);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _AppBar = __webpack_require__(564);
+	
+	var _AppBar2 = _interopRequireDefault(_AppBar);
+	
+	var _QuestionCard = __webpack_require__(615);
+	
+	var _QuestionCard2 = _interopRequireDefault(_QuestionCard);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var styles = {
+	  page: {
+	    width: '100%'
+	  }
+	};
+	
+	var Page = function Page() {
+	  return _react2.default.createElement(
+	    'div',
+	    { style: styles.page },
+	    _react2.default.createElement(_AppBar2.default, null),
+	    _react2.default.createElement(_QuestionCard2.default, null)
+	  );
+	};
+	
+	exports.default = Page;
 
 /***/ }
 /******/ ]);

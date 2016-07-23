@@ -13,7 +13,7 @@ const CardExampleWithAvatar = () => (
     <CardMedia
       overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
     >
-      <img src="http://lorempixel.com/600/337/nature/" />
+      {/*<img src="http://lorempixel.com/600/337/nature/" />*/}
     </CardMedia>
     <CardTitle title="Card title" subtitle="Card subtitle" />
     <CardText>
